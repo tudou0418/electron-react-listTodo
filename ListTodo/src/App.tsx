@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import TodoList from './components/TodoList/TodoList';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // 使用useState钩子定义todos状态和setTodos函数，初始值为一个空数组
+  const [todos, setTodos] = useState<string[]>([]);
+  const handleClearTodos = () => {
+    setTodos([]);
+  };
+
+  
+  // 处理更新待办事项列表的函数
+  const handleSetTodos = (newTodos: Todo[]) => {
+    setTodos(newTodos);
+  };
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Navbar title="我的待办" onClearTodos={handleClearTodos} />
+      <TodoList  todos={todos} setTodos={handleSetTodos}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;
