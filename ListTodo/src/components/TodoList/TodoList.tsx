@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './TodoList.scss'
 // 定义待办事项的类型
 interface Todo {
   id: number;
@@ -51,10 +51,10 @@ const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
   return (
     <div>
       {/* 添加待办事项的表单 */}
-      <form onSubmit={handleAddTodo}>
-        <input type="text" value={newTodo} onChange={(event) => setNewTodo(event.target.value)} placeholder="New todo" />
-        <input type="text" value={newCategory} onChange={(event) => setNewCategory(event.target.value)} placeholder="Category" />
-        <button type="submit">Add</button>
+      <form onSubmit={handleAddTodo} className='handle_addTodo'>
+        <input type="text" value={newTodo} onChange={(event) => setNewTodo(event.target.value)} placeholder="添加待办" />
+        <input type="text" value={newCategory} onChange={(event) => setNewCategory(event.target.value)} placeholder="所属分类" />
+        <button type="submit">添加</button>
       </form>
       {/* 待办事项列表 */}
       <ul>
@@ -65,7 +65,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
             {/* 待办事项的分类 */}
             <input type="text" value={todo.category} onChange={(event) => handleEditTodo(todo.id, todo.text, event.target.value)} />
             {/* 删除待办事项的按钮 */}
-            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+            <button onClick={() => handleDeleteTodo(todo.id)}>删除</button>
           </li>
         ))}
       </ul>

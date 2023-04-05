@@ -1,0 +1,21 @@
+// Head.sass
+.head_box {
+  width: 700px;
+  background: #7188cd;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  -webkit-app-region: drag;
+  .logo,.head_item{
+    -webkit-app-region: no-drag;
+
+  }
+  .logo{
+    width: 100px;
+  }
+  .head_item{
+    width: 200px;
+  }
+}

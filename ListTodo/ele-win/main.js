@@ -5,7 +5,7 @@ const DEV_ENV = app.isPackaged;
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
+    width: 700,
     height: 600,
     frame:false,
     title:'todoList',

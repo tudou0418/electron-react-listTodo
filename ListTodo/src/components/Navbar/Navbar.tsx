@@ -1,4 +1,5 @@
 import React from 'react';
+import './Navbar.scss'
 // 通过interface 来定义props组件，让ts帮我们检查
 interface NavbarProps {
   title: string;
@@ -11,7 +12,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, onClearTodos }) => {
       <div className="container-fluid">
         <span className="navbar-brand mb-0 h1">{title}</span>
         <button className="btn btn-danger" onClick={onClearTodos}>
-          Clear All
+          清除全部
         </button>
       </div>
     </nav>

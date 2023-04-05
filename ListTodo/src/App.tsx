@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import TodoList from './components/TodoList/TodoList';
+import Head from './components/Head/Head';
 import './App.css';
 
 function App() {
@@ -18,8 +19,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar title="我的待办" onClearTodos={handleClearTodos} />
-      <TodoList  todos={todos} setTodos={handleSetTodos}/>
+      <Head/>
+      <div className='content'>
+        <Navbar title="我的待办" onClearTodos={handleClearTodos} />
+        <TodoList  todos={todos} setTodos={handleSetTodos}/>
+      </div>
       </div>
   );
 }
