@@ -31,7 +31,7 @@
     "*.{js,css,md,ts,tsx}": "prettier --write"
   },
   "eslintConfig": {
-    "extends":[
+    "extends": [
       "react-app",
       "react-app/jest",
       "prettier"

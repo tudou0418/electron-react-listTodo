@@ -20,10 +20,7 @@ function App() {
   return (
     <div className="App">
       <Head/>
-      <div className='content'>
-        <Navbar title="我的待办" onClearTodos={handleClearTodos} />
-        <TodoList  todos={todos} setTodos={handleSetTodos}/>
-      </div>
+      <div className='content'> <Navbar title="我的待办" onClearTodos={handleClearTodos} /> <TodoList  todos={todos} setTodos={handleSetTodos}/></div>
       </div>
   );
 }
