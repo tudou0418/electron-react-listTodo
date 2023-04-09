@@ -8,13 +8,14 @@ function App() {
   // 使用useState钩子定义todos状态和setTodos函数，初始值为一个空数组
   const [todos, setTodos] = useState<string[]>([]);
   const handleClearTodos = () => {
-    setTodos([]);
+    setTodos([])
   };
 
   
   // 处理更新待办事项列表的函数
   const handleSetTodos = (newTodos: Todo[]) => {
-    setTodos(newTodos);
+    
+    setTodos(newTodos)
   };
 
   return (
