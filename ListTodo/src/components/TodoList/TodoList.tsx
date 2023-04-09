@@ -57,8 +57,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
         <button type="submit">添加</button>
       </form>
       {/* 待办事项列表 */}
-      <ul>{todos.map(todo => (
-          <li key={todo.id}>
+      <ul>{todos.map(todo => (<li key={todo.id}>
             {/* 待办事项的文本内容 */}
             <input type="text" value={todo.text} onChange={(event) => handleEditTodo(todo.id, event.target.value, todo.category)} />
             {/* 待办事项的分类 */}
