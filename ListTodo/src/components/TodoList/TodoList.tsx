@@ -52,6 +52,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, setTodos }) => {
     <div>
       {/* 添加待办事项的表单 */}
       <form onSubmit={handleAddTodo} className='handle_addTodo'>
+        
         <input type="text" value={newTodo} onChange={(event) => setNewTodo(event.target.value)} placeholder="添加待办" /><input type="text" value={newCategory} onChange={(event) => setNewCategory(event.target.value)} placeholder="所属分类" />
         <button type="submit">添加</button>
       </form>

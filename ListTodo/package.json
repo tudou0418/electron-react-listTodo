@@ -10,6 +10,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^8.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -27,5 +29,12 @@
   },
   "lint-staged": {
     "*.{js,css,md,ts,tsx}": "prettier --write"
+  },
+  "eslintConfig": {
+    "extends":[
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ]
   }
 }
